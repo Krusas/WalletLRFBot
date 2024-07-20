@@ -14,7 +14,7 @@ if (!params && content) {
   const json = JSON.parse(content)
   // Bot.inspect(json) GET FULL DETAILS
   var TextAddress = "Deposit to this address: `" + json.address + "`" // TEXT GENERATED ADDRESS
-  var TextHash = `deposit complete *${json.amount} ${json.currency}*\n\nHash: ${json.hash}` // TEXT HASH SUCCESS DEPOSIT.
+  var TextHash = `Deposit complete *${json.amount} ${json.currency}*\n\nHash: ${json.hash}` // TEXT HASH SUCCESS DEPOSIT.
   // TEXT
   const text = json.address
     ? TextAddress

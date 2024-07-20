@@ -24,7 +24,3 @@ Bot.run({
 if (amount == "false") {
   return Bot.sendMessage("➡️* Send amount " + currency + "*")
 }
-if (address == "false") {
-  return Bot.sendMessage("*➡️ Send address " + currency + " to withdraw*.")
-}
-
