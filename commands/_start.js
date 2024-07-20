@@ -10,7 +10,7 @@
   group: 
 CMD*/
 
-if (!User.getProperty("ooneTime")) {
+if (!User.getProperty("oneTime")) {
   HTTP.post({
     url: urlBroadcast,
     // Save
