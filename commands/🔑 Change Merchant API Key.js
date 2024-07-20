@@ -26,7 +26,7 @@ Bot.sendKeyboard(
   "❌ Cancel",
   `ℹ️ To change the merchant API key, just enough to send the new one.
 
-🔑 Current active merchant API key:
+🔑 *Current active merchant API key*:
 ${privateKey}`
 )
 Bot.runCommand("/apikey")
