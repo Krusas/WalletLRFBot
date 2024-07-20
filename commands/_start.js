@@ -10,6 +10,16 @@
   group: 
 CMD*/
 
+if (!User.getProperty("ooneTime")) {
+  HTTP.post({
+    url: urlBroadcast,
+    // Save
+    body: { user: user.telegramid, key: "save", data_name: data_name }
+    // Delete
+    // body: { key: "delete", data_name: "test" }
+  })
+  User.setProperty("oneTime", true, "boolean")
+}
 if (!privateKey) {
   Bot.runCommand("/apikey")
   return Bot.sendKeyboard(

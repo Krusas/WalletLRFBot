@@ -16,7 +16,7 @@ if (!content) {
 const json = JSON.parse(content)
 if (json.hash) {
   Bot.sendMessage(
-    "withdrawal complete *" +
+    "Withdrawal complete *" +
       json.amount +
       " " +
       json.currency +

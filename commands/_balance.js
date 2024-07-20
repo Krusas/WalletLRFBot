@@ -11,7 +11,7 @@
 CMD*/
 
 if (params && content) {
-  Bot.sendMessage(
+ Bot.sendMessage(
     "Available Balance: *" +
       JSON.parse(content).answer +
       " " +
