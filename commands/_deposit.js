@@ -13,13 +13,13 @@ CMD*/
 if (!params && content) {
   const json = JSON.parse(content)
   // Bot.inspect(json) GET FULL DETAILS
-  var TextAddress = "Deposit to this address: `" + json.address + "`" // TEXT GENERATED ADDRESS
-  var TextHash = `Deposit complete *${json.amount} ${json.currency}*\n\nHash: ${json.hash}` // TEXT HASH SUCCESS DEPOSIT.
+  var textAddress = "Deposit to this address: `" + json.address + "`" // TEXT GENERATED ADDRESS
+  var textHash = `Deposit complete *${json.amount} ${json.currency}*\n\nHash: ${json.hash}` // TEXT HASH SUCCESS DEPOSIT.
   // TEXT
   const text = json.address
-    ? TextAddress
+    ? textAddress
     : json.hash
-    ? TextHash
+    ? textHash
     : inspect(content)
   return Bot.sendMessage(text)
 }
