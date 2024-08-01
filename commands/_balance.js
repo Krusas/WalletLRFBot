@@ -27,5 +27,6 @@ HTTP.post({
     currency: params,
     private_key: privateKey
   },
-  success: "/balance " + params
+  success: "/balance " + params,
+  background: true
 })
