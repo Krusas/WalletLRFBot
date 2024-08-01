@@ -36,8 +36,9 @@ HTTP.post({
     currency: params,
     private_key: privateKey,
     callback: webhook
-  }
+  },
+   background: true
   // if need
-  // success: "/success"
+  // ,success: "/success"
 })
 
