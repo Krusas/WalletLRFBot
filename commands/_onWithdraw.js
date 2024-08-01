@@ -43,9 +43,10 @@ var webhook = Libs.Webhooks.getUrlFor({
     address: message,
     private_key: privateKey,
     callback: webhook
-  }
+  },
+    background: true
   // if need
-  // success: "withdraw check"
+  // ,success: "withdraw check"
 })
 
 Bot.sendMessage("*Withdrawal has been created 1-5 minutes to get txhash*")
