@@ -29,7 +29,7 @@ var buttons = [
     { title: "LTC", command: "/deposit LTC" },
     { title: "BCH", command: "/deposit BCH" }
   ],
-  [{ title: "LTCT (TEST)", command: "/deposit LTCT" }]
+  [{ title: "LTCT (TEST)", command: "/deposit LTCT" },{ title: "TON", command: "/deposit TON" }]
 ]
 
 Bot.sendInlineKeyboard(
