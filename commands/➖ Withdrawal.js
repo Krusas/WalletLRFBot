@@ -29,7 +29,7 @@ var buttons = [
     { title: "LTC", command: "/withdraw false LTC false" },
     { title: "BCH", command: "/withdraw false BCH false" }
   ],
-  [{ title: "LTCT (TEST)", command: "/withdraw false LTCT false" }]
+  [{ title: "LTCT (TEST)", command: "/withdraw false LTCT false" },{ title: "TON", command: "/withdraw false TON false" }]
 ]
 
 Bot.sendInlineKeyboard(
