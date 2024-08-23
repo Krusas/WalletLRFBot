@@ -10,7 +10,7 @@
   group: 
 CMD*/
 
-if (!options||content) {
+if (!options&&content) {
   var json = JSON.parse(content)
   if(json.message.status == "progressing"){
   Bot.sendMessage("*Withdrawal has been created 1-5 minutes to get txhash*")
