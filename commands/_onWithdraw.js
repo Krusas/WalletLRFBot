@@ -10,8 +10,8 @@
   group: 
 CMD*/
 
-if (!options){
-    return
+if (!options) {
+  return
 }
 var amount = options.amount === "false" ? false : options.amount
 var address = options.address === "false" ? false : options.address
@@ -29,23 +29,23 @@ if (!amount) {
 
 if (!address) {
   // Withdrawal
-var webhook = Libs.Webhooks.getUrlFor({
-  command: "/completeWithdraw",
-  user_id: user.id
-})
+  var webhook = Libs.Webhooks.getUrlFor({
+    command: "/completeWithdraw",
+    user_id: user.id
+  })
 
   HTTP.post({
-  url: url,
-  body: {
-    key: "send",
-    currency: currency,
-    amount: amount,
-    address: message,
-    private_key: privateKey,
-    callback: webhook
-  },
+    url: url,
+    body: {
+      key: "send",
+      currency: currency,
+      amount: amount,
+      address: message,
+      private_key: privateKey,
+      callback: webhook
+    },
     background: true,
     success: "/withdraw"
-})
+  })
   return
 }
