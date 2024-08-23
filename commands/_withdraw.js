@@ -11,6 +11,12 @@
 CMD*/
 
 if (!params && content) {
+  var json = JSON.parse(content)
+  if (json.message.status == "progressing") {
+    Bot.sendMessage("*Withdrawal has been created 1-5 minutes to get txhash*")
+  } else {
+    Bot.sendMessage(inspect(content))
+  }
   return
 }
 var prms = params.split(" ")
