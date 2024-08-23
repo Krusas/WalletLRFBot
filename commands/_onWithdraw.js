@@ -10,13 +10,7 @@
   group: 
 CMD*/
 
-if (!options&&content) {
-  var json = JSON.parse(content)
-  if(json.message.status == "progressing"){
-  Bot.sendMessage("*Withdrawal has been created 1-5 minutes to get txhash*")
-  }else{
-  Bot.sendMessage(inspect(content))
-  }
+if (!options){
     return
 }
 var amount = options.amount === "false" ? false : options.amount
@@ -51,7 +45,7 @@ var webhook = Libs.Webhooks.getUrlFor({
     callback: webhook
   },
     background: true,
-    success: "/onWithdraw"
+    success: "/withdraw"
 })
   return
 }
