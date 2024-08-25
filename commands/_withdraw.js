@@ -14,9 +14,9 @@ if (content) {
   var json = JSON.parse(content)
   if (json.message) {
     Bot.sendMessage("*Withdrawal has been created 1-5 minutes to get txhash*")
-  } else {
-    Bot.sendMessage(inspect(content))
+    return
   }
+  Bot.sendMessage(json.answer)
   return
 }
 if (params) {
