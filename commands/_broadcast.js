@@ -27,4 +27,3 @@ if (admin == user.telegramid) {
   return
 }
 Bot.sendMessage("Not admin")
-

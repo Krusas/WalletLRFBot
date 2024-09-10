@@ -4,10 +4,7 @@
   need_reply: false
   auto_retry_time: 
   folder: 
-
-  <<ANSWER
-
-  ANSWER
+  answer: 
   keyboard: 
   aliases: 
   group: 
@@ -30,4 +27,3 @@ Bot.sendKeyboard(
 ${privateKey}`
 )
 Bot.runCommand("/apikey")
-

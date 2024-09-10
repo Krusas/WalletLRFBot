@@ -36,4 +36,3 @@ Bot.sendInlineKeyboard(
   buttons,
   "Please make a choice. After that, another command `/balance` will be started with USDT"
 )
-
