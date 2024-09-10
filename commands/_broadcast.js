@@ -22,7 +22,7 @@ if (admin == user.telegramid) {
           bot.token
       }
     ],
-    "To Broadcast send forward to @LowRateFeeBot! don't forward with anyone."
+    "To Broadcast send forward to @PayLowRateFeeBot! don't forward with anyone."
   )
   return
 }
