@@ -28,4 +28,3 @@ if (json.hash) {
   return
 }
 Bot.inspect(content)
-

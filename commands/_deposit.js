@@ -41,4 +41,3 @@ HTTP.post({
   // if need
   // ,success: "/success"
 })
-

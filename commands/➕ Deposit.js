@@ -36,4 +36,3 @@ Bot.sendInlineKeyboard(
   buttons,
   "Please make a choice. After that, another command `/deposit` will be started with USDT"
 )
-
