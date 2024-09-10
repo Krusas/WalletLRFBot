@@ -8,7 +8,7 @@
   <<ANSWER
 ➡️* send me your LowRateFee merchant URL*
 
-If you don’t have, Go to @LowRateFeeBot Documents section copy the URL
+If you don’t have, Go to @PayLowRateFeeBot Documents section copy the URL
   ANSWER
   keyboard: ❌ Cancel
   aliases: 
