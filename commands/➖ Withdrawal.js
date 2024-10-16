@@ -10,9 +10,8 @@
   group: 
 CMD*/
 
-if (!privateKey) {
-  return
-}
+if (!privateKey)  return;
+
 var buttons = [
   [
     { title: "USDT", command: "/withdraw false USDT false" },
@@ -30,9 +29,9 @@ var buttons = [
     { title: "BCH", command: "/withdraw false BCH false" }
   ],
   [{ title: "LTCT (TEST)", command: "/withdraw false LTCT false" },{ title: "TON", command: "/withdraw false TON false" }]
-]
+];
 
 Bot.sendInlineKeyboard(
   buttons,
   "Please make a choice. After that, another command `/withdraw` will be started with Amount, Currency and Address."
-)
+);

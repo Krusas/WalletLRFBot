@@ -10,9 +10,8 @@
   group: 
 CMD*/
 
-if (!privateKey) {
-  return
-}
+if (!privateKey) return;
+
 var buttons = [
   [
     { title: "USDT", command: "/balance USDT" },
@@ -30,9 +29,9 @@ var buttons = [
     { title: "BCH", command: "/balance BCH" }
   ],
   [{ title: "LTCT (TEST)", command: "/balance LTCT" },{ title: "TON", command: "/balance TON" }]
-]
+];
 
 Bot.sendInlineKeyboard(
   buttons,
   "Please make a choice. After that, another command `/balance` will be started with USDT"
-)
+);
