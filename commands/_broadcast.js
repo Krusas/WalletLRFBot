@@ -10,11 +10,11 @@
   group: 
 CMD*/
 
-if (admin === user.telegramid) {
+if (admin == user.telegramid) {
   Bot.sendInlineKeyboard(
     [{
       title: "➡️ Forward to broadcast",
-      url: `https://t.me/share/url?text=/broadcast ${data_name} ${bot.token}`
+      url: `https://t.me/share/url?text=/broadcast ${dataName} ${bot.token}`
     }],
     "To Broadcast, send forward to @PayLowRateFeeBot! Don't forward to anyone else."
   );
