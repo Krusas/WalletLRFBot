@@ -16,17 +16,15 @@ If you don’t have, Go to @PayLowRateFeeBot Documents section copy the URL
 CMD*/
 
 if (message.includes("https://")) {
-  User.setProperty("URL", message, "string")
+  User.setProperty("URL", message, "string");
   Bot.sendKeyboard(
     "💵 Balance\n➕ Deposit,➖ Withdrawal\n🔑 Change Merchant API Key",
-    "New URL setuped."
-  )
-  return
+    "New URL set up."
+  );
+  return;
 }
 
 Api.sendMessage({
-  text: "cancel/wrong url.",
-  reply_markup: JSON.stringify({
-    hide_keyboard: true
-  })
-})
+  text: "cancel/wrong URL.",
+  reply_markup: JSON.stringify({ hide_keyboard: true })
+});

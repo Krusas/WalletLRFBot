@@ -10,18 +10,19 @@
   group: 
 CMD*/
 
-if (!message) {
-  return
-}
-// cancell
-if (message == "❌ Cancel") {
+if (!message) return;
+
+// Cancel
+if (message === "❌ Cancel") {
   return Api.sendMessage({
     text: "cancel",
-    reply_markup: JSON.stringify({
-      hide_keyboard: true
-    })
-  })
+    reply_markup: JSON.stringify({ hide_keyboard: true })
+  });
 }
-// continue
-Bot.sendKeyboard("💵 Balance\n➕ Deposit,➖ Withdrawal\n🔑 Change Merchant API Key", "API key access")
-User.setProperty("privateKey",message,"string")
+
+// Continue
+Bot.sendKeyboard(
+  "💵 Balance\n➕ Deposit,➖ Withdrawal\n🔑 Change Merchant API Key",
+  "API key access"
+);
+User.setProperty("privateKey", message, "string");

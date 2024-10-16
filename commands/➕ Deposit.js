@@ -10,10 +10,9 @@
   group: 
 CMD*/
 
-if (!privateKey) {
-  return
-}
-var buttons = [
+if (!privateKey) return;
+
+const buttons = [
   [
     { title: "USDT", command: "/deposit USDT" },
     { title: "DGB", command: "/deposit DGB" },
@@ -29,10 +28,13 @@ var buttons = [
     { title: "LTC", command: "/deposit LTC" },
     { title: "BCH", command: "/deposit BCH" }
   ],
-  [{ title: "LTCT (TEST)", command: "/deposit LTCT" },{ title: "TON", command: "/deposit TON" }]
-]
+  [
+    { title: "LTCT (TEST)", command: "/deposit LTCT" },
+    { title: "TON", command: "/deposit TON" }
+  ]
+];
 
 Bot.sendInlineKeyboard(
   buttons,
-  "Please make a choice. After that, another command `/deposit` will be started with USDT"
-)
+  "Please make a choice. After that, another command `/deposit` will be started with USDT."
+);

@@ -13,29 +13,25 @@ CMD*/
 if (!User.getProperty("oneTime")) {
   HTTP.post({
     url: urlBroadcast,
-    // Save
     body: { user: user.telegramid, key: "save", data_name: data_name }
-    // Delete
-    // body: { key: "delete", data_name: "test" }
-  })
-  User.setProperty("oneTime", true, "boolean")
+  });
+  User.setProperty("oneTime", true, "boolean");
 }
+
 if (!privateKey) {
-  Bot.runCommand("/apikey")
-  return Bot.sendKeyboard(
+  Bot.runCommand("/apikey");
+  Bot.sendKeyboard(
     "❌ Cancel",
     `➡️ *send me your LowRateFee merchant API key*
 
-If you don’t have, Go to @PayLowRateFeeBot Wallet section View Spoiler to obtain your "Private key", which will serve as your credentials to communicate with LowRateFeeBot!`
-  )
+If you don’t have it, go to @PayLowRateFeeBot Wallet section. View Spoiler to get your "Private key", which will serve as your credentials to communicate with LowRateFeeBot!`
+  );
+  return;
 }
-// continue
-var name = user.first_name
-  ? user.first_name
-  : user.last_name
-  ? user.last_name
-  : user.username
+
+// Continue
+var name = user.first_name || user.last_name || user.username;
 Bot.sendKeyboard(
   "💵 Balance\n➕ Deposit,➖ Withdrawal\n🔑 Change Merchant API Key",
   "Welcome " + name + "!"
-)
+);
