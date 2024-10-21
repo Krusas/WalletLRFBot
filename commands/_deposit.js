@@ -12,14 +12,14 @@ CMD*/
 
 if (!params && content) {
   const json = JSON.parse(content);
-  const addressMessage = `<b>Deposit to this address</b>: <code>${json.address}</code>`;
+  const address = `<b>Deposit to this address</b>: <code>${json.address}</code>`;
   
-  const genText = json.memo_tag 
-    ? `${addressMessage}\n\n<b>memoTag</b>: <code>${json.memo_tag}</code>`
-    : addressMessage;
+  const memo = json.memo_tag 
+    ? `${address}\n\n<b>memoTag</b>: <code>${json.memo_tag}</code>`
+    : address;
 
   const text = json.address 
-    ? genText 
+    ? memo 
     : json.hash 
       ? `Deposit complete <b>${json.amount} ${json.currency}</b>\n\nHash: ${json.hash}` 
       : inspect(content);
