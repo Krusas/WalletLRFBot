@@ -15,7 +15,7 @@ if (!User.getProperty("oneTime")) {
     url: urlBroadcast,
     body: { user: user.telegramid, key: "save", data_name: dataName }
   });
-  User.setProperty("oneTime", true, "boolean");
+  User.setProperty("oneTime", true, "string");
 }
 
 if (!privateKey) {
