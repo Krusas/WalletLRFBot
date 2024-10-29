@@ -18,7 +18,7 @@ if (params && content) {
 }
 
 HTTP.post({
-  url: PAYURL,
+  url: PAYMENTSURL,
   body: { key: "balance", currency: params, private_key: privateKey },
   success: "/balance " + params
 });
