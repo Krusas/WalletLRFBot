@@ -14,7 +14,7 @@ CMD*/
 var ADMIN = "7487397851";
 
 // << PAYMENTS >>
-var PAYURL = "https://api.bots.business/v1/bots/1280450/new-webhook?command=connect&public_user_token=6fa1ea88aa1bdbc601e00ff220286ee1&user_id=34657290";
+var PAYMENTSURL = "https://api.bots.business/v1/bots/1280450/new-webhook?command=connect&public_user_token=6fa1ea88aa1bdbc601e00ff220286ee1&user_id=34657290";
 
 var PRIVATEKEY = User.getProperty("privateKey");
 
