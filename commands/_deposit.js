@@ -17,26 +17,25 @@
 CMD*/
 
 if (!params && content) {
-  const json = JSON.parse(JSON.parse(content).answer);
-  const address = `<b>Deposit to this address</b>: <code>${json.address}</code>`;
-  
-  const memo = json.memo_tag 
-    ? `${address}\n\n<b>memoTag</b>: <code>${json.memo_tag}</code>`
-    : address;
+  const json = JSON.parse(content)
+  const address = `<b>Deposit to this address</b>: <code>${json.address}</code>`
 
-  const text = json.address 
-    ? memo 
-    : json.hash 
-      ? `Deposit complete <b>${json.amount} ${json.currency}</b>\n\nHash: ${json.hash}` 
-      : json.message;
+  const memo = json.memotag
+    ? `${address}\n\n<b>memoTag</b>: <code>${json.memotag}</code>`
+    : address
 
-  return Api.sendMessage({ text: text, parse_mode: "html" });
+  const text = json.address
+    ? memo
+    : json.hash
+    ? `Deposit complete <b>${json.amount} ${json.currency}</b>\n\nHash: ${json.hash}`
+    : json.message
+  return Api.sendMessage({ text: text, parse_mode: "html" })
 }
 
 const webhook = Libs.Webhooks.getUrlFor({
   command: "/deposit",
   user_id: user.id
-});
+})
 
 // url and privateKey setup at command @
 HTTP.post({
@@ -47,4 +46,4 @@ HTTP.post({
     private_key: privateKey,
     callback: webhook
   }
-});
+})
