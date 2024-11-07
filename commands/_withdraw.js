@@ -16,7 +16,7 @@ if (content) {
     Bot.sendMessage("*Withdrawal has been created. 1-5 minutes to get txhash*");
     return;
   }
-  Bot.sendMessage(`*Withdrawal Complete ${json.hash}*`);
+  Bot.sendMessage(content);
   return;
 }
 
