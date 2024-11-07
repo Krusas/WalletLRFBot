@@ -11,12 +11,12 @@
 CMD*/
 
 if (content) {
-  const json = JSON.parse(content);
-  if (json.message) {
+  const json = JSON.parse(JSON.parse(content).answer);
+  if (json.ok) {
     Bot.sendMessage("*Withdrawal has been created. 1-5 minutes to get txhash*");
     return;
   }
-  Bot.sendMessage(json.answer);
+  Bot.sendMessage(`*Withdrawal Complete ${json.hash}*`);
   return;
 }
 
