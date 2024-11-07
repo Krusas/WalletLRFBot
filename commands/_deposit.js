@@ -10,20 +10,33 @@
   group: 
 CMD*/
 
+// success response
+if (params && content) {
+  const json = JSON.parse(JSON.parse(content).answer)
+  const address = "*Deposit to this address*: `" + json.address + "`"
+
+  json.memotag
+    ? Bot.sendMessage(address + "\n\n*memoTag*: `" + json.memotag + "`")
+    : Bot.sendMessage(address)
+  return
+}
+// webhook response
 if (!params && content) {
   const json = JSON.parse(content)
-  const address = `<b>Deposit to this address</b>: <code>${json.address}</code>`
 
-  const memo = json.memotag
-    ? `${address}\n\n<b>memoTag</b>: <code>${json.memotag}</code>`
-    : address
+  json.hash
+    ? Bot.sendMessage(
+        "Deposit complete *" +
+          json.amount +
+          " " +
+          json.currency +
+          "*\n\nHash: `" +
+          json.hash +
+          "`"
+      )
+    : Bot.inspect(content)
 
-  const text = json.address
-    ? memo
-    : json.hash
-    ? `Deposit complete <b>${json.amount} ${json.currency}</b>\n\nHash: ${json.hash}`
-    : json.message
-  return Api.sendMessage({ text: text, parse_mode: "html" })
+  return
 }
 
 const webhook = Libs.Webhooks.getUrlFor({
@@ -39,5 +52,8 @@ HTTP.post({
     currency: params,
     private_key: privateKey,
     callback: webhook
-  }
+  },
+  // callback webhook & response are different
+  success: "/deposit response"
 })
+
