@@ -1,19 +1,25 @@
 /*CMD
   command: /start
   help: 
-  need_reply: 
+  need_reply: false
   auto_retry_time: 
   folder: 
-  answer: 
-  keyboard: 
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
   aliases: 
   group: 
 CMD*/
 
 if (!User.getProperty("oneTime")) {
   HTTP.post({
-    url: BROADCASTURL,
-    body: { user: user.telegramid, key: "save", data_name: DATANAME }
+    url: urlBroadcast,
+    body: { user: user.telegramid, key: "save", data_name: dataName }
   });
   User.setProperty("oneTime", true, "string");
 }

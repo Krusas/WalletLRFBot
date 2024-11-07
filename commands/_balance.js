@@ -11,14 +11,18 @@
 CMD*/
 
 if (params && content) {
-  Bot.sendMessage(
-    "Available Balance: *" + JSON.parse(content).answer + " " + params.toUpperCase() + "*"
-  );
+  const { ok, balance, currency ,error } = JSON.parse(JSON.parse(content).answer);
+
+
+  ok ? Bot.sendMessage(`Available Balance: *${balance} ${currency}*`) : Bot.inspect(error);
+
+
   return;
 }
 
+// url and privateKey setup at command @
 HTTP.post({
-  url: PAYMENTSURL,
+  url,
   body: { key: "balance", currency: params, private_key: privateKey },
-  success: "/balance " + params
+  success: `/balance ${params}`
 });

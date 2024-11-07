@@ -31,8 +31,9 @@ if (!address) {
     user_id: user.id
   });
 
+// url and privateKey setups at command @
   HTTP.post({
-    url: PAYMENTSURL,
+    url: url,
     body: {
       key: "send",
       currency,
