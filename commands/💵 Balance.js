@@ -28,6 +28,11 @@ var buttons = [
     { title: "LTC", command: "/balance LTC" },
     { title: "BCH", command: "/balance BCH" }
   ],
+  [
+    { title: "PIVX", command: "/balance PIVX" },
+    { title: "XVG", command: "/balance XVG" },
+    { title: "SYS", command: "/balance SYS" }
+  ],
   [{ title: "LTCT (TEST)", command: "/balance LTCT" },{ title: "TON", command: "/balance TON" }]
 ];
 
