@@ -29,6 +29,11 @@ const buttons = [
     { title: "BCH", command: "/deposit BCH" }
   ],
   [
+    { title: "PIVX", command: "/balance PIVX" },
+    { title: "XVG", command: "/balance XVG" },
+    { title: "SYS", command: "/balance SYS" }
+   ],
+   [
     { title: "LTCT (TEST)", command: "/deposit LTCT" },
     { title: "TON", command: "/deposit TON" }
   ]
