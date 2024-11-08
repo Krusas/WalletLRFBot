@@ -11,10 +11,10 @@
 CMD*/
 
 if (params && content) {
-  const { ok, balance, currency ,error } = JSON.parse(JSON.parse(content).answer);
+  const { ok, balance, currency ,message } = JSON.parse(JSON.parse(content).answer);
 
 
-  ok ? Bot.sendMessage(`Available Balance: *${balance} ${currency}*`) : Bot.inspect(error);
+  ok ? Bot.sendMessage(`Available Balance: *${balance} ${currency}*`) : Bot.inspect("Error: "+message);
 
 
   return;

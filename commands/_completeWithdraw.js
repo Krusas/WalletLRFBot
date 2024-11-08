@@ -10,17 +10,11 @@
   group: 
 CMD*/
 
-if (!content) {
-  return
-}
+if (!content) return;
 
-const json = JSON.parse(content)
+const { ok, amount, currency, to, hash, message } = JSON.parse(content);
 
-if (json.ok) {
-  Bot.sendMessage(`Withdrawal complete *${json.amount} ${json.currency}* to ${json.to}\n\n${json.hash}`
-  )
-  return
-}
-
-Bot.inspect(content)
-
+Bot.sendMessage(ok 
+  ? `Withdrawal complete *${amount} ${currency}* to ${to}\n\n${hash}` 
+  : `Error: ${message}`
+);
