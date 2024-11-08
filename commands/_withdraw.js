@@ -11,25 +11,19 @@
 CMD*/
 
 if (content) {
-  const json = JSON.parse(JSON.parse(content).answer);
-  if (json.ok) {
-    Bot.sendMessage("*Withdrawal has been created. 1-5 minutes to get txhash*");
-    return;
-  }
-  Bot.sendMessage(content);
+  const { ok, message } = JSON.parse(JSON.parse(content).answer);
+  Bot.sendMessage(ok 
+    ? "*Withdrawal has been created. 1-5 minutes to get txhash*" 
+    : message
+  );
   return;
 }
 
 if (params) {
-  const prms = params.split(" ");
-  const [amount, currency, address] = prms;
-
-  Bot.run({
-    command: "/onWithdraw",
-    options: { amount, currency, address }
-  });
+  const [amount, currency, address] = params.split(" ");
+  Bot.run({ command: "/onWithdraw", options: { amount, currency, address } });
 
   if (amount === "false") {
-    return Bot.sendMessage(`➡️ *Send amount ${currency}*`);
+    Bot.sendMessage(`➡️ *Send amount ${currency}*`);
   }
 }

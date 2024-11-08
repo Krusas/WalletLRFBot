@@ -10,18 +10,13 @@
   group: 
 CMD*/
 
-if (!content) {
-  return
+if (!content) return;
+
+const { ok, address, memotag, message } = JSON.parse(JSON.parse(content).answer);
+
+if (ok) {
+  const addrMsg = "*Deposit to this address*: `"+address+"`";
+  Bot.sendMessage(memotag ? addrMsg+"\n\n*memoTag*: `"+memotag+"`" : addrMsg);
+} else {
+  Bot.sendMessage(message);
 }
-const json = JSON.parse(JSON.parse(content).answer)
-if (json.ok) {
-  const address = "*Deposit to this address*: `" + json.address + "`"
-
-  json.memotag
-    ? Bot.sendMessage(address + "\n\n*memoTag*: `" + json.memotag + "`")
-    : Bot.sendMessage(address)
-
-  return
-}
-Bot.inspect(content)
-
