@@ -14,7 +14,8 @@ if (!content) return;
 
 const { ok, amount, currency, to, hash, message } = JSON.parse(content);
 
-Bot.sendMessage(ok 
-  ? `Withdrawal complete *${amount} ${currency}* to ${to}\n\n${hash}` 
-  : `Error: ${message}`
-);
+const text = ok 
+  ? "Withdrawal complete *"+amount+" "+currency+"* to "+to+"\n\n`"+hash+"`" 
+  : "Error: "+message;
+
+Bot.sendMessage(text);

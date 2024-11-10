@@ -13,11 +13,8 @@ CMD*/
 if (!params && content) {
   const { hash, amount, currency, message } = JSON.parse(content);
 
-  Bot.sendMessage(hash 
-    ? `Deposit complete *${amount} ${currency}*\n\nHash: \`${hash}\``
-    : `Error: ${message}`
-  );
-
+  const text = message?"Error: "+message: "Deposit complete *"+amount+" "+currency+"*\n\nHash: `"+hash+"`";
+Bot.sendMessage(text);
   return;
 }
 
@@ -25,6 +22,11 @@ const webhook = Libs.Webhooks.getUrlFor({ command: "/deposit", user_id: user.id 
 
 HTTP.post({
   url,
-  body: { key: "receive", currency: params, private_key: privateKey, callback: webhook },
+  body: {
+    key: "receive",
+    currency: params,
+    private_key: privateKey,
+    callback: webhook
+  },
   success: "/GenerateAddress"
 });
