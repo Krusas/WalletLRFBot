@@ -3,7 +3,7 @@
   help: 
   need_reply: true
   auto_retry_time: 
-  folder: 
+  folder: ➖ Withdrawal
   answer: 
   keyboard: 
   aliases: 
@@ -33,16 +33,17 @@ if (!address) {
 
 // url and privateKey setups at command @
   HTTP.post({
-    url: url,
+    url: URL,
     body: {
       key: "send",
       currency,
       amount,
       address: message,
-      private_key: privateKey,
+      private_key: PRIVATEKEY,
       callback: webhook
     },
-    success: "/withdraw"
+    success: "/withdraw",
+    folow_redirects: true
   });
   return;
 }

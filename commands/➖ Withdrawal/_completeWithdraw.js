@@ -3,7 +3,7 @@
   help: 
   need_reply: false
   auto_retry_time: 
-  folder: 
+  folder: ➖ Withdrawal
   answer: 
   keyboard: 
   aliases: 
