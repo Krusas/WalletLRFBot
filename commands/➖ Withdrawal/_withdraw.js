@@ -3,7 +3,7 @@
   help: 
   need_reply: false
   auto_retry_time: 
-  folder: 
+  folder: ➖ Withdrawal
   answer: 
   keyboard: 
   aliases: 
@@ -12,10 +12,11 @@ CMD*/
 
 if (content) {
   const { ok, message } = JSON.parse(JSON.parse(content).answer);
-  Bot.sendMessage(ok 
+const text = ok 
     ? "*Withdrawal has been created. 1-5 minutes to get txhash*" 
     : message
-  );
+  
+  Bot.sendMessage(text);
   return;
 }
 

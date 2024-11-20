@@ -3,14 +3,14 @@
   help: 
   need_reply: 
   auto_retry_time: 
-  folder: 
+  folder: 💵 Balance
   answer: 
   keyboard: 
   aliases: 
   group: 
 CMD*/
 
-if (!privateKey) return;
+if (!PRIVATEKEY) return;
 
 var buttons = [
   [

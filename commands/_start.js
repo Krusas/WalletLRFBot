@@ -12,13 +12,13 @@ CMD*/
 
 if (!User.getProperty("oneTime")) {
   HTTP.post({
-    url: urlBroadcast,
-    body: { user: user.telegramid, key: "save", data_name: dataName }
+    url: URLBROADCAST,
+    body: { user: user.telegramid, key: "save", data_name: DATANAME }
   });
   User.setProperty("oneTime", true, "string");
 }
 
-if (!privateKey) {
+if (!PRIVATEKEY) {
   Bot.runCommand("/apikey");
   Bot.sendKeyboard(
     "❌ Cancel",
@@ -32,6 +32,6 @@ If you don’t have it, go to @PayLowRateFeeBot Wallet section. View Spoiler to 
 // Continue
 var name = user.first_name || user.last_name || user.username;
 Bot.sendKeyboard(
-  "💵 Balance\n➕ Deposit,➖ Withdrawal\n🔑 Change Merchant API Key",
+  "💵 Balance\n➕ Deposit,💱 Swap,➖ Withdrawal\n🔑 Change Merchant API Key",
   "Welcome " + name + "!"
 );

@@ -10,7 +10,7 @@
   group: 
 CMD*/
 
-if (!privateKey) {
+if (!PRIVATEKEY) {
   Bot.runCommand("/apikey");
   return Bot.sendKeyboard(
     "❌ Cancel",
@@ -24,6 +24,6 @@ Bot.sendKeyboard(
   "❌ Cancel",
   `ℹ️ To change the merchant API key, just send the new one.
 
-🔑 *Current active merchant API key*:\n${privateKey}`
+🔑 *Current active merchant API key*:\n${PRIVATEKEY}`
 );
 Bot.runCommand("/apikey");

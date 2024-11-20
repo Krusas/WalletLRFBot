@@ -3,7 +3,7 @@
   help: 
   need_reply: false
   auto_retry_time: 
-  folder: 
+  folder: ➕ Deposit
   answer: 
   keyboard: 
   aliases: 
@@ -21,12 +21,13 @@ Bot.sendMessage(text);
 const webhook = Libs.Webhooks.getUrlFor({ command: "/deposit", user_id: user.id });
 
 HTTP.post({
-  url,
+  url: URL,
   body: {
     key: "receive",
     currency: params,
-    private_key: privateKey,
+    private_key: PRIVATEKEY,
     callback: webhook
   },
-  success: "/GenerateAddress"
+  success: "/GenerateAddress",
+  folow_redirects:true
 });

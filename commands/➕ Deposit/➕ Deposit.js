@@ -3,14 +3,14 @@
   help: 
   need_reply: 
   auto_retry_time: 
-  folder: 
+  folder: ➕ Deposit
   answer: 
   keyboard: 
   aliases: 
   group: 
 CMD*/
 
-if (!privateKey) return;
+if (!PRIVATEKEY) return;
 
 const buttons = [
   [

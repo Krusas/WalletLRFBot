@@ -1,9 +1,9 @@
 /*CMD
-  command: /testDeposit
+  command: /testWithdraw
   help: 
   need_reply: 
   auto_retry_time: 
-  folder: 
+  folder: ➖ Withdrawal
   answer: 
   keyboard: 
   aliases: 
@@ -11,18 +11,18 @@
 CMD*/
 
 const webhook = Libs.Webhooks.getUrlFor({
-  command: "/deposit",
+  command: "/completeWithdraw",
   user_id: user.id
 })
-
 HTTP.post({
   url: webhook,
   body: {
+    ok: true,
     amount: 0.1,
     currency: "TON",
-    hash: "Testhash526273hdjddj"
-    // Error catch
-     // ,message:"error message"
-  }
+    to: "addressmeee",
+    hash: "Testhash75jhffggh"
+  },
+  folow_redirects: true
 })
 
