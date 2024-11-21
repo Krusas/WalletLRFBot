@@ -11,7 +11,9 @@
 CMD*/
 
 if (!params && content) {
-  var json = JSON.parse(JSON.parse(content).answer)
+ const jss = JSON.parse(content)
+  const jk = JSON.parse(jss).answer
+  const json = JSON.parse(jk)
   if (json.message) {
     Bot.sendMessage(json.message)
     return
@@ -25,7 +27,10 @@ HTTP.post({
   url: "https://api.bots.business/v2/bots/1280450/web-app/Connect",
   body: {
     method: "swap",
+    privatekey: PRIVATEKEY,
     id: params
   },
-  success: "/confirm"
+  success: "/confirm",
+  folow_redirects: true
 })
+

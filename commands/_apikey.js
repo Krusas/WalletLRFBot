@@ -22,7 +22,7 @@ if (message === "❌ Cancel") {
 
 // Continue
 Bot.sendKeyboard(
-  "💵 Balance\n➕ Deposit,➖ Withdrawal\n🔑 Change Merchant API Key",
+  "💵 Balance\n➕ Deposit,💱 Swap,➖ Withdrawal\n🔑 Change Merchant API Key",
   "API key access"
 );
 User.setProperty("privateKey", message, "string");

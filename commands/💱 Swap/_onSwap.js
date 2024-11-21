@@ -21,6 +21,7 @@ HTTP.post({
     currency2,
     amount: message
   },
-  success: "/swap"
+  success: "/swap",
+  folow_redirects: true
 })
 
